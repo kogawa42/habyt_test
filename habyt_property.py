@@ -39,7 +39,6 @@ class ParseAPI:
         ])
         self.sellable_unit_df = self.sellable_unit_df.drop_duplicates(subset='id')
              
-        
     def make_address_df(self):
         self.address_df = pd.DataFrame([
             {
@@ -49,13 +48,11 @@ class ParseAPI:
                 'stateCode': prop.get('address', {}).get('stateCode'),
                 'postalCode': prop.get('address', {}).get('postalCode'),
                 'countryCode': prop.get('address', {}).get('countryCode'),
-                
                 'description': prop.get('description'),
                 'propertyName': prop.get('propertyName'),
                 'propertyDescription': prop.get('propertyDescription'),
                 'marketingName': prop.get('marketingName'),
                 'floorplanName': prop.get('floorplanName'),
-                
                 'neighborhood': prop.get('neighborhood'),
                 'neighborhoodDescription': prop.get('neighborhoodDescription'),
                 'latitude': prop.get('address', {}).get('latitude'),
